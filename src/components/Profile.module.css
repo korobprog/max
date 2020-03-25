@@ -1,0 +1,17 @@
+.Profile {
+    font-size: 1.25rem; color: red;
+}
+
+.content {
+    grid-area: c;
+    background-color: dimgray;
+
+
+}
+.fon {
+    width: 1024px;
+}
+
+.item {
+    color: thistle;
+}
