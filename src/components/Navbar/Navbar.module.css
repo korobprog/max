@@ -1,10 +1,10 @@
 .nav {
     grid-area: n;
-    background-color: darkslateblue;
+    background-color: coral;
 }
-.item {
-    color: greenyellow;
+.item a {
+    color: white;
 }
-.active {
-    color: khaki;
+.item a.activeLinc {
+    color: gold;
 }

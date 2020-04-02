@@ -12,8 +12,8 @@ const MyPosts = () => {
             <button>Add Post</button>
         </div>
         <div className={s.posts}>
-            <Posts message='Hi, how are you?' />
-            <Posts message="Its' my firet post" />
+            <Posts message='Hi, how are you?' likesCount='0' /> {/*//то что подставить в props*/}
+            <Posts message="Its' my firet post" likesCount='23' />
 
 
         </div>

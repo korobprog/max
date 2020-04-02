@@ -5,9 +5,9 @@ import MyPosts from "./MyPost/MyPosts";
 
 const Profile = () => {
     return (
-        <div className={s.content}>
+        <div>
             <div>
-                <img className={s.fon} src='https://clipart-db.ru/file_content/rastr/background_065.jpg'
+                <img className={s.fon} src='https://sun9-58.userapi.com/c836335/v836335335/2ad50/1NyqfwPWyhk.jpg'
                      alt="fon_profile"/>
             </div>
             <div>
