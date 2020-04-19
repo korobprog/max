@@ -8,27 +8,29 @@ import {BrowserRouter, Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import Message from "./components/Dialogs/Messange/Messange";
 
 
 
 const App = (props) => {
+    /*const { state: {dialogs, messages, posts}} = props*/
 
     return <BrowserRouter>
         <div className='app-wrapper'>
             <Header/>
             <Navbar/>
             <div className='app-wrapper-content'>
-                {/*     <Route path='/dialogs' component={Dialogs}/>
-                <Route path='/profile' component={Profile}/>
-                <Route path='/news' component={News}/>
-                <Route path='/music' component={Music}/>
-                <Route path='/Settings' component={Settings}/>*/}
 
-                <Route path='/dialogs' render={ () => <Dialogs /> }/>
-                <Route path='/profile' render={ () => <Profile posts={props.posts} /> }/>
-                <Route path='/news' render={ () => <News /> }/>
+                <Route path='/dialogs' render={ () => <Dialogs
+                    dialogs={props.state.dialogsPage.dialogs}
+                    messages={props.state.dialogsPage.messages}
+                /> }/>
+                <Route path='/profile' render={ () => <Profile
+                    posts={props.state.profilePage.posts}
+                /> }/>
+               {/* <Route path='/news' render={ () => <News /> }/>
                 <Route path='/music' render={ () => <Music /> }/>
-                <Route path='/Settings' render={ () => <Settings /> }/>
+                <Route path='/Settings' render={ () => <Settings /> }/>*/}
 
             </div>
         </div>
