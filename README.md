@@ -7,7 +7,7 @@ This app developing with using React, Redux, REST API, ES6 and Material Design e
 
 > All you need to get started is git/node/npm.
 
-    git clone https://github.com/vraja-nayaka/social_React.git
+    git clone https://github.com/korobprog/social_React.git
     cd social_React
     npm install                 # install dependencies.
 
