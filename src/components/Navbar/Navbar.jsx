@@ -33,7 +33,6 @@ const Navbar = (props) => {
             </div>
 
        <AvatarGroup max={3} >
-           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
            {avatars}
                 </AvatarGroup>
        </nav>
