@@ -8,6 +8,11 @@ const Dialogs = (props) => {
 
 let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} key={d.id} />);
 let messagesElements = props.messages.map(m => <Message message={m.message} />);
+let sendMessageElement = React.createRef();
+let SendMessage = () => {
+    let text =sendMessageElement.current.value;
+    alert(text);
+}
 return (
     <div className={s.dialogs}>
         <div className={s.dialogsItems}>
@@ -17,10 +22,10 @@ return (
             {messagesElements}
             <div className={s.imput}>
                 <div>
-                    <textarea>123</textarea>
+                    <textarea ref={sendMessageElement} ></textarea>
                 </div>
                 <div>
-                    <Button color="primary" variant="contained">Send</Button>
+                    <Button color="primary" variant="contained" onClick={SendMessage}>Send</Button>
                 </div>
             </div>
         </div>
