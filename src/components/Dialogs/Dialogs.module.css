@@ -5,6 +5,7 @@
 }
 .dialog {
 color: aliceblue;
+
 }
 
 .dialogsItems {
@@ -19,10 +20,15 @@ color: aliceblue;
 
 .messages {
     padding: 10px;
-
+ 
 
 }
 
 .messages .message {
+
+
+}
+.imput {
+    padding-top: 20px;
 
 }

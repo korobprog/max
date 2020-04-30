@@ -6,15 +6,22 @@ import Button from "@material-ui/core/Button";
 
 const MyPosts = ({posts}) => {
     let postsElements = posts.map(p => <Posts message={p.message} LikesCount={p.likesCount}/>);
+
+    let newPostElement = React.createRef();
+
+    let AddPost = () => {
+        let text = newPostElement.current.value;
+        alert(text);
+    }
     return (
         <div className={s.postsBlock}>
             <h3>My Post</h3>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPostElement}></textarea>
                 </div>
                 <div>
-                    <Button color="primary" variant="contained">Add Post</Button>
+                    <Button color="primary" variant="contained" onClick={AddPost}>Add Post</Button>
                 </div>
             </div>
             <div className={s.posts}>
