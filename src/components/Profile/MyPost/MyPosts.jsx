@@ -4,14 +4,15 @@ import Posts from './Post/Posts'
 import Button from "@material-ui/core/Button";
 
 
-const MyPosts = ({posts}) => {
-    let postsElements = posts.map(p => <Posts message={p.message} LikesCount={p.likesCount}/>);
+const MyPosts = (props) => {
+    let postsElements =
+        props.posts.map(p => <Posts message={p.message} LikesCount={p.likesCount}/>);
 
     let newPostElement = React.createRef();
 
     let AddPost = () => {
         let text = newPostElement.current.value;
-        alert(text);
+        props.addPost(text);
     }
     return (
         <div className={s.postsBlock}>
