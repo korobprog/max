@@ -10,7 +10,7 @@ import Route from "react-router-dom/es/Route";
 
 
 const App = (props) => {
-    /*const { state: {dialogs, messages, posts}} = props*/
+
 
     return (
     <div className='app-wrapper'>
@@ -24,10 +24,10 @@ const App = (props) => {
                     messages={props.state.dialogsPage.messages}
                 /> }/>
                 <Route path='/profile' render={ () => <Profile
-                    state={props.state.profilePage}
-                    posts={props.state.profilePage.posts}
+                    profilePage={props.state.profilePage}
+                    updateNewPostText={props.updateNewPostText}
                     addPost={props.addPost}/> }/>
-
+                {/*posts={props.state.profilePage.posts}*/}
             </div>
         </div>
     )
