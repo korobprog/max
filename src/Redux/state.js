@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import  {rerenderEntireTree} from "../render";
+=======
+import {rerenderEntireTree} from "../render";
+
+>>>>>>> 4b63a1fb33a5dc8ff25127651b5044b20bfb8fe1
 let state;
 state = {
     profilePage: {
@@ -37,12 +42,16 @@ export let addPost = () => {
         likesCount: 0
     };
     state.profilePage.posts.push(newPost);
+<<<<<<< HEAD
     rerenderEntireTree(state);
 }
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
+=======
+rerenderEntireTree(state);
+>>>>>>> 4b63a1fb33a5dc8ff25127651b5044b20bfb8fe1
 }
 
 export default  state;
