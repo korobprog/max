@@ -6,8 +6,8 @@ import Button from "@material-ui/core/Button";
 
 const Dialogs = (props) => {
 
-let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} key={d.id} />);
-let messagesElements = props.messages.map(m => <Message message={m.message} />);
+let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} key={d.id} avatar={d.avatar} />);
+let messagesElements = props.state.messages.map(m => <Message message={m.message} />);
 let sendMessageElement = React.createRef();
 let SendMessage = () => {
     let text =sendMessageElement.current.value;
