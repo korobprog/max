@@ -1,7 +1,6 @@
 import { rerenderEntireTree } from "../render";
 
-let state;
-state = {
+const state = {
     profilePage: {
         posts: [
             { id: 1, message: 'Hi how are you?', likesCount: 12 },
@@ -25,11 +24,8 @@ state = {
             { id: 4, message: 'Yo' },
             { id: 5, message: 'Yo' },
         ],
-        newMessagesText: 'it'
+        newMessagesText: ''
     },
-
-
-
 };
 
 /// Posts
