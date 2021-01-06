@@ -6,10 +6,13 @@ import Button from "@material-ui/core/Button";
 
 
 const Dialogs = (props) => {
+    console.log(props);
+
+
     let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} key={d.id} avatar={d.avatar} />);
     let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message} />);
     let newMessagesElement = React.createRef();
-
+    
     let addMessage = () => {
         props.addMessage();
         props.updateNewMessagesText('');

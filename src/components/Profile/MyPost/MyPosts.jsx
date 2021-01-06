@@ -5,12 +5,13 @@ import Button from "@material-ui/core/Button";
 
 
 const MyPosts = (props) => {
-    let postsElements =
-        props.posts.map(p => <Posts message={p.message} LikesCount={p.likesCount}/>);
+//    console.log(props, "MyPosts");
+    let postsElements = props.posts.map(p => <Posts message={p.message} LikesCount={p.likesCount}/>);
 
     let newPostElement = React.createRef();
 
     let AddPost = () => {
+        console.log("addPost", props);
         props.addPost();
         props.updateNewPostText('');
         newPostElement.current.value = '';
