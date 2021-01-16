@@ -28,7 +28,7 @@ let store = {
                 { id: 4, message: 'Yo' },
                 { id: 5, message: 'Yo' },
             ],
-            newMessagesBody: ''
+            newMessageBody: ''
         },
     },
     _callSubscriber() {
@@ -51,12 +51,12 @@ let store = {
         this._callSubscriber(this._state); //observer
     },
     subscribe(observer) {
-        this._rerenderEntireTree = observer;
+        this._callSubscriber = observer;
     },
 
 
     dispatch(action) { // { type: ADD-POST'}
-    
+    console.log(action)
         if (action.type === ADD_POST) {
             const newPost = {
                 id: 6,
@@ -73,9 +73,9 @@ let store = {
             this._state.dialogsPage.newMessageBody = action.body;
             this._callSubscriber(this._state);
         } else if (action.type === SEND_MESSAGE) {
-            let body = this._state.dialogsPage.newMessagesBody;
-            console.log(body)
-            this._state.dialogsPage.mewMessageBody = '';
+            let body = this._state.dialogsPage.newMessageBody;
+            console.log(this._state)
+            this._state.dialogsPage.newMessageBody = '';
             this._state.dialogsPage.messages.push({ id: 6, message: body });
             this._callSubscriber(this._state);
         }
@@ -83,6 +83,7 @@ let store = {
 }
 
 export const addPostActionCreator = () => ({ type: ADD_POST })
+
 export const updateNewPostTextActionCreator = (text) =>
     ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 

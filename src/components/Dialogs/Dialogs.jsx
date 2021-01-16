@@ -6,10 +6,11 @@ import Button from "@material-ui/core/Button";
 import { updateNewMessageBodyCreator, sendMessageCreator } from "../../Redux/state"
 
 const Dialogs = (props) => {
+
     let state = props.store.getState().dialogsPage;
 
-    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} avatar={d.avatar} />);
-    let messagesElements = state.messages.map(m => <Message message={m.message} />);
+    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} key={dialog.id} avatar={dialog.avatar} />);
+    let messagesElements = state.messages.map(message => <Message message={message.message} key={message.id}/>);
     let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {

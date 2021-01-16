@@ -12,7 +12,7 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let AddPost = () => {
-        props.dispatch({addPostActionCreator});
+        props.dispatch(addPostActionCreator());
     }
     let onPostChange = () => {
         let text = newPostElement.current.value;
