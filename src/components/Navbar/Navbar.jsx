@@ -1,13 +1,11 @@
 import React from 'react';
 import s from './Navbar.module.css';
 import { NavLink } from "react-router-dom";
-import Avatar from '@material-ui/core/Avatar';
-import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
 
 
-const Navbar = (props) => {
-    const avatars = props.dialogs.map(d => <Avatar key={d.id} alt={d.name} src={d.avatar} />);
+
+const Navbar = () => {
     return (
         <nav className={s.nav}>
             <div className={s.item}>
@@ -26,9 +24,6 @@ const Navbar = (props) => {
                 <NavLink to="/settings" activeClassName={s.activeLinc}>Settings</NavLink>
             </div>
 
-            <AvatarGroup max={3} >
-                {avatars}
-            </AvatarGroup>
         </nav>
     )
 }
