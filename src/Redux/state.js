@@ -74,6 +74,7 @@ let store = {
             this._callSubscriber(this._state);
         } else if (action.type === SEND_MESSAGE) {
             let body = this._state.dialogsPage.newMessagesBody;
+            console.log(body)
             this._state.dialogsPage.mewMessageBody = '';
             this._state.dialogsPage.messages.push({ id: 6, message: body });
             this._callSubscriber(this._state);
