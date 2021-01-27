@@ -3,7 +3,7 @@ import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Messange/Messange";
 import Button from "@material-ui/core/Button";
-import { updateNewMessageBodyCreator, sendMessageCreator } from "../../Redux/state"
+import { updateNewMessageBodyCreator, sendMessageCreator } from "../../Redux/dialogs-reducer"
 
 const Dialogs = (props) => {
 
