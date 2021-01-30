@@ -1,24 +1,23 @@
 import React from 'react';
 import s from './MyPosts.module.css';
-import Posts from './Post/Posts'
+import Post from './Post/Post'
 import Button from "@material-ui/core/Button";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/profile-reducer" ;
 
 
 const MyPosts = (props) => {
-      
-    let postsElements = props.posts.map(posts => <Posts message={posts.message} LikesCount={posts.likesCount} key={posts.id} />);
+
+    let postsElements = props.posts.map(posts => <Post message={posts.message} LikesCount={posts.likesCount} key={posts.id} />);
 
     let newPostElement = React.createRef();
 
-    let AddPost = () => {
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost();
     }
     let onPostChange = () => {
+       
         let text = newPostElement.current.value;
-        //let action = ({ type: 'UPDATE-NEW-POST-TEXT', newText: text });
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+        props.updateNewPostText(text);
+
     }
     return (
         <div className={s.postsBlock}>
@@ -29,7 +28,7 @@ const MyPosts = (props) => {
                         value={props.newPostText} />
                 </div>
                 <div>
-                    <Button color="primary" variant="contained" onClick={AddPost}>Add Post</Button>
+                    <Button color="primary" variant="contained" onClick={onAddPost}>Add Post</Button>
                 </div>
             </div>
             <div className={s.posts}>

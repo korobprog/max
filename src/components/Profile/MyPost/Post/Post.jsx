@@ -1,10 +1,9 @@
 import React from 'react';
-import s from './Posts.module.css';
+import s from './Post.module.css';
 
 
-const Posts = (props) => {
-
-    return (
+const Post = (props) => {
+return (
 
         <div className={s.item}>
             <img src="https://yt3.ggpht.com/a/AGF-l7_EX3WQIek2PX6SAWw4ArjmZ4cllrz1ReAKaQ=s900-c-k-c0xffffffff-no-rj-mo"/>
@@ -19,4 +18,4 @@ const Posts = (props) => {
 
 }
 
-export default Posts;
+export default Post;
