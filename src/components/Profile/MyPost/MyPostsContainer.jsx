@@ -8,7 +8,7 @@ const MyPostsContainer = () => {
     return (
         <StoreContext.Consumer> {
             (store) => {
-                let state = props.store.getState();
+                let state = store.getState();
                 let addPost = () => {
                     store.dispatch(addPostActionCreator());
                 }
@@ -16,13 +16,16 @@ const MyPostsContainer = () => {
                     let action = updateNewPostTextActionCreator(text);
                     store.dispatch(action);
                 }
-                <MyPosts updateNewPostText={onPostChange}
+                return <MyPosts updateNewPostText={onPostChange}
                     addPost={addPost}
                     posts={state.profilePage.posts}
                     newPostText={state.profilePage.newPostText} />
             }
         }
         </StoreContext.Consumer>
-   
+    )
+
 }
 export default MyPostsContainer;
+
+
