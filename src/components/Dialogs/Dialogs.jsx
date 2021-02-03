@@ -5,11 +5,9 @@ import Message from "./Messange/Messange";
 import Button from "@material-ui/core/Button";
 
 const Dialogs = (props) => {
-
     let state = props.dialogsPage;
-
     let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} key={dialog.id} avatar={dialog.avatar} />);
-    let messagesElements = state.messages.map(message => <Message message={message.message} key={message.id}/>);
+    let messagesElements = state.messages.map(message => <Message message={message.message} key={message.id} />);
     let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {
@@ -18,8 +16,8 @@ const Dialogs = (props) => {
     }
     let onNewSendMessageChange = (e) => {
         let body = e.target.value;
-        props.updateNewMessageBodyCreator(body);
-        
+        props.updateNewMessageBody(body);
+
     }
 
     return (
