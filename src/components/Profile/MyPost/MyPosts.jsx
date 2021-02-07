@@ -2,6 +2,8 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post'
 import Button from "@material-ui/core/Button";
+import SendIcon from '@material-ui/icons/Send';
+
 
 
 const MyPosts = (props) => {
@@ -28,7 +30,7 @@ const MyPosts = (props) => {
                         value={props.newPostText} />
                 </div>
                 <div>
-                    <Button color="primary" variant="contained" onClick={onAddPost}>Add Post</Button>
+                    <Button color="primary" size="small" endIcon={<SendIcon />}  variant="contained" onClick={onAddPost}>Add Post</Button>
                 </div>
             </div>
             <div className={s.posts}>

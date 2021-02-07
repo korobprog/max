@@ -3,6 +3,7 @@ import s from './../Dialogs.module.css' ;
 import {NavLink} from "react-router-dom";
 import Avatar from '@material-ui/core/Avatar';
 
+
 /*props*/
 const DialogItem = (props) => {
     let path = "/dialogs/" + props.id;

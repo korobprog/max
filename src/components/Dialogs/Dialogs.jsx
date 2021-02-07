@@ -3,6 +3,7 @@ import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Messange/Messange";
 import Button from "@material-ui/core/Button";
+import SendIcon from '@material-ui/icons/Send';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -31,7 +32,7 @@ const Dialogs = (props) => {
                     <div><textarea value={newMessageBody}
                         onChange={onNewSendMessageChange}
                         placeholder='Enter your message'></textarea></div>
-                    <div><Button color="primary" variant="contained" onClick={onSendMessageClick}>Send</Button></div>
+                    <div><Button color="secondary" size="small" endIcon={<SendIcon />} variant="contained" onClick={onSendMessageClick}>Send</Button></div>
                 </div>
             </div>
 
