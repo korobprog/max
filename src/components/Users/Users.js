@@ -1,23 +1,32 @@
 import React from 'react';
 import userPhoto from '../../../src/assets/images/user-men.png';
 import styles from './users.module.css';
+import Pagination from '@material-ui/lab/Pagination';
+
 
 let Users = (props) => {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize); // Math.ceil округлить в большую сторону
 
-    let pages = [];
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i);
-    }
+    /*  let pages = [];
+     for (let i = 1; i <= pagesCount; i++) {
+         pages.push(i);
+     } */
+    const handleChange = (event, value) => {
+        props.onPageChanged(value)
+    };
 
     return <div>
-        <div>
+
+
+        <Pagination count={pagesCount} page={props.currentPage} onChange={handleChange} />
+
+        {/*  <div> count={10}   
             {pages.map(p => {
                 return <span className={props.currentPage === p && styles.selectedPage}
                     onClick={(e) => { props.onPageChanged(p); }} > {p}</span>
-            })}
-        </div>
+            })} </div> */}
+
         {
             props.users.map(u => <div key={u.id} >
                 <span>
