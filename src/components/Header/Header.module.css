@@ -9,3 +9,11 @@
     width: 40px;
 
 }
+
+.loginBlock {
+    float: right;
+    color:blanchedalmond
+}
+.loginBlock a {
+    color: white
+}

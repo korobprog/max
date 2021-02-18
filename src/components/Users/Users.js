@@ -2,6 +2,7 @@ import React from 'react';
 import userPhoto from '../../../src/assets/images/user-men.png';
 import styles from './users.module.css';
 import Pagination from '@material-ui/lab/Pagination';
+import { NavLink } from 'react-router-dom';
 
 
 let Users = (props) => {
@@ -31,7 +32,10 @@ let Users = (props) => {
             props.users.map(u => <div key={u.id} >
                 <span>
                     <div>
-                        <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.userPhoto} />
+                        <NavLink to={'/profile/' + u.id }>
+                            <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.userPhoto} />
+                            </NavLink>
+                        
                     </div>
                     <div>
                         {u.followed
