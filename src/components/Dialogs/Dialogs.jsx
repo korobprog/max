@@ -4,6 +4,7 @@ import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Messange/Messange";
 import Button from "@material-ui/core/Button";
 import SendIcon from '@material-ui/icons/Send';
+import { Redirect } from 'react-router';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -20,7 +21,7 @@ const Dialogs = (props) => {
         props.updateNewMessageBody(body);
 
     }
-
+if (!props.isAuth) return <Redirect to={"/Login"} /> ;
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
