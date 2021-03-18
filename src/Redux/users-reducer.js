@@ -1,4 +1,3 @@
-
 import { usersAPI } from '../API/api';
 
 const FOLLOW = 'FOLLOW';
@@ -8,8 +7,6 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
-
-
 
 let initialState = {
     users: [],
@@ -68,9 +65,8 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 followingInProgress: action.isFetching
                     ? [...state.followingInProgress, action.userId]
-                    : state.followingInProgress.filter(id => id != action.userId)
+                    : state.followingInProgress.filter(id => id !== Number(action.userId))
             }
-
 
         }
 
@@ -106,7 +102,7 @@ export const follow = (userId) => {
         dispatch(toggleFollowingProgress(true, userId));
         usersAPI.follow(userId)
         .then(response => {
-            if (response.data.resultCode == 0) {
+            if (Number(response.data.resultCode) === 0) {
             dispatch(followSuccsess(userId));
         }
         dispatch(toggleFollowingProgress(false, userId));
@@ -120,7 +116,7 @@ export const unfollow = (userId) => {
         dispatch(toggleFollowingProgress(true, userId));
         usersAPI.unfollow(userId)
         .then(response => {
-            if (response.data.resultCode == 0) {
+            if (Number(response.data.resultCode) === 0) {
             dispatch(unfollowSuccsess(userId));
         }
         dispatch(toggleFollowingProgress(false, userId));
