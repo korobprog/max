@@ -17,15 +17,8 @@ const Dialogs = (props) => {
   ));
   let newMessageBody = state.newMessageBody;
 
-  let onSendMessageClick = () => {
-    props.sendMessage();
-  };
-  let onNewSendMessageChange = (e) => {
-    let body = e.target.value;
-    props.updateNewMessageBody(body);
-  };
   let addNewMessage = (values) => { //messages - newMessageBody
-    alert(values.newMessageBody)
+    props.sendMessage(values.newMessageBody);
   };
   if (!props.isAuth) return <Redirect to={"/Login"} />;
   return (
